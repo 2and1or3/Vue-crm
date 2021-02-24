@@ -13,6 +13,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 import currencyFilter from '@/filters/currency.filter'
+import tooltypDirective from './directives/tooltip.directive'
 
 Vue.config.productionTip = false
 
@@ -21,6 +22,7 @@ Vue.filter('currency', currencyFilter)
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 Vue.component('Loader', Loader)
+Vue.directive('tooltip', tooltypDirective)
 
 const config = {
   apiKey: 'AIzaSyAXxMkjhfSYatziSjdGvAvFhzc8lpwkUnY',
