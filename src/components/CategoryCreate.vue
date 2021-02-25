@@ -2,7 +2,7 @@
   <div class="col s12 m6">
     <div>
       <div class="page-subtitle">
-        <h4>Создать</h4>
+        <h4>{{'Categories_Create_Title' | localize}}</h4>
       </div>
 
       <form @submit.prevent="submitHandler">
@@ -13,11 +13,11 @@
             v-model="title"
             :class="{invalid: $v.title.$dirty && !$v.title.required}"
           >
-          <label for="name">Название</label>
+          <label for="name">{{'Categories_Create_Label' | localize}}</label>
           <span
             v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
-          >Введите название категории</span>
+          >{{'Categories_Create_LabelMessageRequired' | localize}}</span>
         </div>
 
         <div class="input-field">
@@ -27,15 +27,15 @@
             v-model.number="limit"
             :class="{invalid: $v.limit.$dirty && !$v.limit.minValue}"
           >
-          <label for="limit">Лимит</label>
+          <label for="limit">{{'Categories_Create_Limit' | localize}}</label>
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
-          >Минимальная величина 1</span>
+          >{{'Categories_Create_LimitMessageMin' | localize}}</span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
-          Создать
+          {{'Categories_Create_Button' | localize}}
           <i class="material-icons right">send</i>
         </button>
       </form>

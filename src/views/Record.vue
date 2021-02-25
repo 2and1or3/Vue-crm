@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Новая запись</h3>
+      <h3>{{'Record_Title' | localize}}</h3>
     </div>
 
     <Loader v-if="loading"></Loader>
 
     <p class="center" v-else-if="!categories.length">
-      Категорий пока нет
-      <router-link to="/categories">to categories</router-link>
+      {{'Record_Empty' | localize}}
+      <router-link to="/categories">{{'Record_AddNew' | localize}}</router-link>
     </p>
 
     <form v-else class="form" @submit.prevent="submitHandler">
@@ -21,7 +21,7 @@
 
           >{{cat.title}}</option>
         </select>
-        <label>Выберите категорию</label>
+        <label>{{'Record_Choose' | localize}}</label>
       </div>
 
       <p>
@@ -33,7 +33,7 @@
             value="income"
             v-model="type"
           />
-          <span>Доход</span>
+          <span>{{'Record_Income' | localize}}</span>
         </label>
       </p>
 
@@ -46,7 +46,7 @@
             value="outcome"
             v-model="type"
           />
-          <span>Расход</span>
+          <span>{{'Record_Outcome' | localize}}</span>
         </label>
       </p>
 
@@ -57,11 +57,11 @@
           v-model.number="amount"
           :class="{invalid: $v.amount.$dirty && !$v.amount.minValue}"
         >
-        <label for="amount">Сумма</label>
+        <label for="amount">{{'Record_Amount' | localize}}</label>
         <span
           v-if="$v.amount.$dirty && !$v.amount.minValue"
           class="helper-text invalid"
-        >Минимальная сумма 1</span>
+        >{{'Record_AmountMessageMin' | localize}}</span>
       </div>
 
       <div class="input-field">
@@ -71,15 +71,15 @@
           v-model="description"
           :class="{invalid: $v.description.$dirty && !$v.description.required}"
         >
-        <label for="description">Описание</label>
+        <label for="description">{{'Record_Description' | localize}}</label>
         <span
           v-if="$v.description.$dirty && !$v.description.required"
           class="helper-text invalid"
-        >Поле является обязательным</span>
+        >{{'Record_DescriptionMessageRequired' | localize}}</span>
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Создать
+        {{'Record_Create' | localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>

@@ -2,7 +2,7 @@
   <div class="col s12 m6">
     <div>
       <div class="page-subtitle">
-        <h4>Редактировать</h4>
+        <h4>{{'Categories_Edit_Title' | localize}}</h4>
       </div>
 
       <form @submit.prevent="submitHanlder">
@@ -15,7 +15,7 @@
 
             >{{cat.title}}</option>
           </select>
-          <label>Выберите категорию</label>
+          <label>{{'Categories_Edit_Choose' | localize}}</label>
         </div>
 
         <div class="input-field">
@@ -25,11 +25,11 @@
             v-model="title"
             :class="{invalid: $v.title.$dirty && !$v.title.required}"
           >
-          <label for="name">Название</label>
+          <label for="name">{{'Categories_Edit_Label' | localize}}</label>
           <span
             v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
-          >Введите название категории</span>
+          >{{'Categories_Edit_LabelMessageRequired' | localize}}</span>
         </div>
 
         <div class="input-field">
@@ -39,15 +39,15 @@
             v-model.number="limit"
             :class="{invalid: $v.limit.$dirty && !$v.limit.minValue}"
           >
-          <label for="limit">Лимит</label>
+          <label for="limit">{{'Categories_Edit_Limit' | localize}}</label>
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
-          >Минимальная величина 1</span>
+          >{{'Categories_Edit_LimitMessageMin' | localize}}</span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
-          Обновить
+          {{'Categories_Edit_Button' | localize}}
           <i class="material-icons right">send</i>
         </button>
       </form>
