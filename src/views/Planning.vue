@@ -35,6 +35,11 @@ import localizeFilter from '@/filters/locolize.filter'
 
 export default {
   name: 'planning',
+  metaInfo () {
+    return {
+      title: this.$title('Planning_Title')
+    }
+  },
   data () {
     return {
       loading: true,

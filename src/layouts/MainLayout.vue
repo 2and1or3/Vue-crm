@@ -46,7 +46,7 @@ export default {
       return this.$store.getters.error
     },
     locale () {
-      return this.$store.getters.info.locale
+      return this.$store.getters.info?.locale || 'ru-RU'
     },
     tooltipMessage: () => localizeFilter('Tooltip_CreateNew')
   },

@@ -1,5 +1,6 @@
 {
   "ProfileTitle": "Профиль",
+  "Logout": "Выйти",
   "Message_EnterName": "Введите имя",
   "Name": "Имя",
   "Update": "Обновить",
@@ -57,6 +58,7 @@
   "Categories_Edit_Limit": "Лимит",
   "Categories_Edit_LimitMessageMin": "Минимальная величина 1",
   "Categories_Edit_Button": "Обновить",
+  "DetailRecord_Title": "Детали записи",
   "DetailRecord_History": "История",
   "DetailRecord_Outcome": "Расход",
   "DetailRecord_Income": "Доход",

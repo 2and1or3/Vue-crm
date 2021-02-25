@@ -40,6 +40,11 @@ import { required } from 'vuelidate/lib/validators'
 
 export default {
   name: 'profile',
+  metaInfo () {
+    return {
+      title: this.$title('ProfileTitle')
+    }
+  },
   data () {
     return {
       name: '',

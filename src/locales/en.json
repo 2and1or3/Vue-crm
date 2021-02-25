@@ -1,5 +1,6 @@
 {
   "ProfileTitle": "Profile",
+  "Logout": "Logout",
   "Message_EnterName": "Enter name",
   "Name": "Name",
   "Update": "Update",
@@ -57,6 +58,7 @@
   "Categories_Edit_Limit": "Limit",
   "Categories_Edit_LimitMessageMin": "Min limit 1",
   "Categories_Edit_Button": "Update",
+  "DetailRecord_Title": "Record details",
   "DetailRecord_History": "History",
   "DetailRecord_Outcome": "Outcome",
   "DetailRecord_Income": "Income",
