@@ -1,12 +1,6 @@
 import firebase from 'firebase/app'
 
 export default {
-  state () {
-    return {
-
-    }
-  },
-
   actions: {
     async createCategory ({ commit, dispatch }, { title, limit }) {
       try {
@@ -54,6 +48,23 @@ export default {
             limit: categories[key].limit,
             id: key
           }))
+      } catch (e) {
+        commit('setError', e)
+        throw e
+      }
+    },
+    async fetchCategoryById ({ commit, dispatch }, id) {
+      try {
+        const uid = await dispatch('getUid')
+
+        const category = (await firebase
+          .database()
+          .ref(`/users/${uid}/categories`)
+          .child(id)
+          .once('value'))
+          .val() || {}
+
+        return { ...category, id }
       } catch (e) {
         commit('setError', e)
         throw e
